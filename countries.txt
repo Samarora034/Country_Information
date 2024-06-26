@@ -1,0 +1,182 @@
+S:
+
+Singapore
+
+Capital: Singapore
+Currency: Singapore Dollar (SGD)
+
+Slovakia
+
+Capital: Bratislava
+Currency: Euro (EUR)
+
+Slovenia
+
+Capital: Ljubljana
+Currency: Euro (EUR)
+
+Solomon Islands
+
+Capital: Honiara
+Currency: Solomon Islands Dollar (SBD)
+
+Somalia
+
+Capital: Mogadishu
+Currency: Somali Shilling (SOS)
+
+South Africa
+
+Capital: Pretoria (executive), Bloemfontein (judicial), Cape Town (legislative)
+Currency: South African Rand (ZAR)
+
+South Korea
+
+Capital: Seoul
+Currency: South Korean Won (KRW)
+
+South Sudan
+
+Capital: Juba
+Currency: South Sudanese Pound (SSP)
+Spain
+
+Capital: Madrid
+Currency: Euro (EUR)
+Sri Lanka
+
+Capital: Colombo, Sri Jayawardenepura Kotte (official)
+Currency: Sri Lankan Rupee (LKR)
+Sudan
+
+Capital: Khartoum
+Currency: Sudanese Pound (SDG)
+Suriname
+
+Capital: Paramaribo
+Currency: Surinamese Dollar (SRD)
+Sweden
+
+Capital: Stockholm
+Currency: Swedish Krona (SEK)
+Switzerland
+
+Capital: Bern
+Currency: Swiss Franc (CHF)
+Syria
+
+Capital: Damascus
+Currency: Syrian Pound (SYP)
+T:
+
+Taiwan
+
+Capital: Taipei
+Currency: New Taiwan Dollar (TWD)
+Tajikistan
+
+Capital: Dushanbe
+Currency: Tajikistani Somoni (TJS)
+Tanzania
+
+Capital: Dodoma
+Currency: Tanzanian Shilling (TZS)
+Thailand
+
+Capital: Bangkok
+Currency: Thai Baht (THB)
+Timor-Leste
+
+Capital: Dili
+Currency: United States Dollar (USD)
+Togo
+
+Capital: Lomé
+Currency: West African CFA franc (XOF)
+Tonga
+
+Capital: Nuku'alofa
+Currency: Tongan Paʻanga (TOP)
+Trinidad and Tobago
+
+Capital: Port of Spain
+Currency: Trinidad and Tobago Dollar (TTD)
+Tunisia
+
+Capital: Tunis
+Currency: Tunisian Dinar (TND)
+Turkey
+
+Capital: Ankara
+Currency: Turkish Lira (TRY)
+Turkmenistan
+
+Capital: Ashgabat
+Currency: Turkmenistan Manat (TMT)
+Tuvalu
+
+Capital: Funafuti
+Currency: Tuvaluan Dollar (TVD)
+U:
+
+Uganda
+
+Capital: Kampala
+Currency: Ugandan Shilling (UGX)
+Ukraine
+
+Capital: Kyiv
+Currency: Ukrainian Hryvnia (UAH)
+United Arab Emirates
+
+Capital: Abu Dhabi
+Currency: UAE Dirham (AED)
+United Kingdom
+
+Capital: London
+Currency: British Pound (GBP)
+United States
+
+Capital: Washington, D.C.
+Currency: United States Dollar (USD)
+Uruguay
+
+Capital: Montevideo
+Currency: Uruguayan Peso (UYU)
+Uzbekistan
+
+Capital: Tashkent
+Currency: Uzbekistani Som (UZS)
+V:
+
+Vanuatu
+
+Capital: Port Vila
+Currency: Vanuatu Vatu (VUV)
+Vatican City
+
+Capital: Vatican City
+Currency: Euro (EUR)
+Venezuela
+
+Capital: Caracas
+Currency: Venezuelan Bolívar (VES)
+Vietnam
+
+Capital: Hanoi
+Currency: Vietnamese Dong (VND)
+Y:
+
+Yemen
+Capital: Sana'a
+Currency: Yemeni Rial (YER)
+Z:
+
+Zambia
+
+Capital: Lusaka
+Currency: Zambian Kwacha (ZMW)
+Zimbabwe
+
+Capital: Harare
+Currency: Zimbabwean Dollar (ZWL)
