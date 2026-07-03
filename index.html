@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Information</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>🌍 Country Information</h1>
+    <p class="subtitle">Explore 192 countries around the world</p>
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search by country, capital, or currency..."
+        autocomplete="off"
+        aria-label="Search countries"
+      >
+      <span class="search-icon" aria-hidden="true">🔍</span>
+    </div>
+    <div class="stats" id="stats">Showing 192 countries</div>
+  </header>
+
+  <main class="country-grid" id="country-grid" role="list">
+    <!-- Country cards rendered dynamically by JS -->
+  </main>
+
+  <div class="no-results" id="no-results" hidden>
+    <p>No countries found matching your search.</p>
+  </div>
+
+  <footer class="app-footer">
+    <p>Country Information App &copy; 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

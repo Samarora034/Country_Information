@@ -1,36 +1,309 @@
-/* CSS to style the country list */
-h1{
-  color: red;
+/* ===== CSS Custom Properties (Theme) ===== */
+:root {
+  --color-bg: #1a1a2e;
+  --color-surface: #16213e;
+  --color-card: #0f3460;
+  --color-card-hover: #1a4a7a;
+  --color-primary: #e94560;
+  --color-primary-light: #ff6b6b;
+  --color-text: #eaeaea;
+  --color-text-muted: #a0a0b0;
+  --color-accent: #53b1fd;
+  --color-border: #2a2a4a;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 30px rgba(233, 69, 96, 0.2);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+  --max-width: 1400px;
 }
-h2{
-  color:white;
-}
-p{
-  color: white;
-}
-body{
-  text-align: center;
-  background-color:rgb(41, 41, 41);
-}
-ul {
-  list-style-type: none;
-  padding: 0;
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
-li {
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.app-header {
   text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.app-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Search ===== */
+.search-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem 0.9rem 3rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 50px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+#search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+}
+
+#search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.stats {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ===== Country Grid ===== */
+.country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ===== Country Card ===== */
+.country-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   cursor: pointer;
-  padding: 10px;
-  margin-bottom: 5px;
-  margin-right: 600px;
-  margin-left: 600px;
-  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-li:hover {
-  background-color: gray;
-  color: white;
+
+.country-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-primary);
 }
-.country-info {
+
+.country-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-flag {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.card-details {
+  display: grid;
+  gap: 0.5rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding-top 0.3s ease;
+}
+
+.country-card.expanded .card-details {
+  max-height: 200px;
+  opacity: 1;
+  padding-top: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-primary-light);
+  min-width: 80px;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.card-expand-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  transition: opacity var(--transition);
+}
+
+.country-card.expanded .card-expand-hint {
+  opacity: 0;
+}
+
+/* ===== No Results ===== */
+.no-results {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.no-results[hidden] {
   display: none;
-  margin-top: 10px;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.country-card {
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+/* Stagger the animation for visible cards */
+.country-card:nth-child(1) { animation-delay: 0.02s; }
+.country-card:nth-child(2) { animation-delay: 0.04s; }
+.country-card:nth-child(3) { animation-delay: 0.06s; }
+.country-card:nth-child(4) { animation-delay: 0.08s; }
+.country-card:nth-child(5) { animation-delay: 0.1s; }
+.country-card:nth-child(6) { animation-delay: 0.12s; }
+.country-card:nth-child(7) { animation-delay: 0.14s; }
+.country-card:nth-child(8) { animation-delay: 0.16s; }
+.country-card:nth-child(9) { animation-delay: 0.18s; }
+.country-card:nth-child(10) { animation-delay: 0.2s; }
+.country-card:nth-child(11) { animation-delay: 0.22s; }
+.country-card:nth-child(12) { animation-delay: 0.24s; }
+.country-card:nth-child(n+13) { animation-delay: 0.26s; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .country-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .country-card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-flag {
+    width: 48px;
+    height: 32px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }

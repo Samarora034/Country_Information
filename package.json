@@ -1,0 +1,68 @@
+{
+  "name": "country-information",
+  "version": "1.0.0",
+  "description": "A desktop app showing information about 192 countries",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --enable-logging",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable",
+    "build:linux": "electron-builder --linux",
+    "build:mac": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.saksham.country-information",
+    "productName": "Country Information",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "app.js",
+      "styles.css",
+      "countries.json",
+      "Flags/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerSidebar": null
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Education"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "category": "public.app-category.education"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samarora034/Country_Information.git"
+  },
+  "keywords": ["countries", "electron", "desktop"],
+  "author": "Saksham Midha",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Samarora034/Country_Information/issues"
+  },
+  "homepage": "https://github.com/Samarora034/Country_Information#readme",
+  "devDependencies": {
+    "electron": "35.1.5",
+    "electron-builder": "26.0.12"
+  }
+}
